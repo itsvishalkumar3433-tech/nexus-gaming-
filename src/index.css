@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gaming-black: #050505;
+  --color-gaming-dark: #0a0a0a;
+  --color-gaming-accent: #00ff88;
+  --color-gaming-neon: #00f2ff;
+  --color-gaming-purple: #8a2be2;
+}
+
+@layer base {
+  body {
+    @apply bg-gaming-black text-white font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.neon-border {
+  @apply border border-gaming-accent/30 hover:border-gaming-accent transition-colors duration-300;
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-gaming-accent to-gaming-neon;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gaming-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-gaming-accent/50 transition-colors;
+}
